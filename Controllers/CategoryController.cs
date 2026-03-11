@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using BulkyBookWeb.Data;
 using BulkyBookWeb.Models;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace BulkyBookWeb.Controllers
 {
@@ -27,6 +28,10 @@ namespace BulkyBookWeb.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create(Category obj)
         {
+            if(obj.Name == obj.DisplayOrder.ToString())
+            {
+                ModelState.AddModelError("Name", "The DisplayOrder cannot exactly match the Name.");
+            }
             if(ModelState.IsValid)
             {
                 _db.Categories.Add(obj);
