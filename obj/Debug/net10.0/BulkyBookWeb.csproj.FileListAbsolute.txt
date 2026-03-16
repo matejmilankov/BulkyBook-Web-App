@@ -563,4 +563,4 @@ C:\Users\matej\BulkyBook\BulkyBookWeb\bin\Debug\net10.0\ru\Microsoft.CodeAnalysi
 C:\Users\matej\BulkyBook\BulkyBookWeb\bin\Debug\net10.0\tr\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\matej\BulkyBook\BulkyBookWeb\bin\Debug\net10.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 C:\Users\matej\BulkyBook\BulkyBookWeb\bin\Debug\net10.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
-C:\Users\matej\BulkyBook\BulkyBookWeb\obj\Debug\net10.0\compressed\ayccdwj4xa-{0}-0yk7430m07-0yk7430m07.gz
+C:\Users\matej\BulkyBook\BulkyBookWeb\obj\Debug\net10.0\compressed\ayccdwj4xa-{0}-khkvgnj9nq-khkvgnj9nq.gz

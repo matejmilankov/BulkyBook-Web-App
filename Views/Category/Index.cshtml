@@ -1,34 +1,57 @@
 ﻿@model IEnumerable<Category>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Index Category";
 }
 
 <div class="header-container">
-    <h1>Index Category</h1>
-    <a asp-controller="Category" asp-action="Create">Create New Category</a>
+    <div>
+        <h1>Index category</h1>
+        <p>View and manage items</p>
+    </div>
+    <a asp-controller="Category" asp-action="Create" class="main-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+            <path d="M4 12H20M12 4V20" stroke="#ffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+       Create New Category
+    </a>
 </div>
-<table class="table table-bordered table-striped" style="width:100%">
-    <thead>
-        <tr>
-            <th>Category Name</th>
-            <th>Display Order</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
+
+<div class="table-container">
+    <div class="table-header">
+        <p>Category name</p>
+        <p>Display order</p>
+        <p>Created date time</p>
+        <p>Actions</p>
+    </div>
+
+    <div class="table-content">
         @foreach(var obj in Model)
         {
-            <tr>
-                <td width="50%">@obj.Name</td>
-                <td width="30%">@obj.DisplayOrder</td>
-                <td>
-                    <div class="w-75 btn-group" role="group">
-                        <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id">Edit</a>
-                        <a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.Id">Delete</a>
-                    </div>
-                </td>
-            </tr>
-        } 
-    </tbody>
-</table>
+            <div class="table-row">
+                <p>@obj.Name</p>
+                <p>@obj.DisplayOrder</p>
+                <p>@obj.CreatedDateTime</p>
+                <div class="action-btns">
+                    <a asp-controller="Category" asp-action="Edit" asp-route-id="@obj.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                            <path d="M15.4998 5.49994L18.3282 8.32837M3 20.9997L3.04745 20.6675C3.21536 19.4922 3.29932 18.9045 3.49029 18.3558C3.65975 17.8689 3.89124 17.4059 4.17906 16.9783C4.50341 16.4963 4.92319 16.0765 5.76274 15.237L17.4107 3.58896C18.1918 2.80791 19.4581 2.80791 20.2392 3.58896C21.0202 4.37001 21.0202 5.63634 20.2392 6.41739L8.37744 18.2791C7.61579 19.0408 7.23497 19.4216 6.8012 19.7244C6.41618 19.9932 6.00093 20.2159 5.56398 20.3879C5.07171 20.5817 4.54375 20.6882 3.48793 20.9012L3 20.9997Z" stroke="blue" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <span>Edit</span>
+                    </a>
+                    <a asp-controller="Category" asp-action="Delete" asp-route-id="@obj.Id">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                            <path d="M7.69231 8.70833H5V8.16667H9.84615M7.69231 8.70833V19H16.3077V8.70833M7.69231 8.70833H16.3077M16.3077 8.70833H19V8.16667H14.1538M9.84615 8.16667V6H14.1538V8.16667M9.84615 8.16667H14.1538" stroke="red" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M10 11V17" stroke="red" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12 11V17" stroke="red" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M14 11V17" stroke="red" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        Delete
+                    </a>
+                </div>
+            </div>
+            <hr />
+        }
+    </div>
+</div>
+
 
